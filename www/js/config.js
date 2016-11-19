@@ -1,4 +1,4 @@
-var env = 'local';
+var env = 'dev';
 if(env === 'local'){
   var baseURL = 'http://localhost:2000/api/';
   var imageURL = 'http://www.createmobileshop.com/assets/';
