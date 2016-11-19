@@ -1,0 +1,47 @@
+<ion-view view-title="cart">
+  <ion-content class="cart-content" scroll="true" style="padding-top:10px;">
+    <div class="row">
+      <!-- <div class="col"> -->
+        <h1 class="center"><span></span>${{cartValue + deliveryCharges | number : 2}}</h1>
+      <!-- </div> -->
+    </div>
+    <div class="row">
+      <span class="center blue font-15" style=" margin-top: -10px;" ng-if="cartValue > 0">Thank you {{userDetail.displayName}}!</span>
+      <span class="center blue font-15" style=" margin-top: -10px;" ng-if="cartValue == 0">Add products to cart, {{userDetail.displayName}}!</span>
+    </div>
+
+    <div class="row charge-list">
+      <div class="col">
+        <p ng-repeat="item in cart">{{item.quantity}} x {{item.item_name}}</p>
+      </div>
+    </div>
+    <!-- <div class="row"> -->
+      <button class="button button-full cart-cancel-text" ng-click="doCancel()">
+        Cancel Cart
+      </button>
+ 
+      
+    </div>
+    <div class="row charge">
+      <div class="col-50">
+        <h3><span>Subtotal</span>${{cartValue | number : 2}}</h3>
+      </div>
+      <div class="col-50">
+        <h3><span>Delivery</span>${{deliveryCharges}}</h3>
+      </div>
+    </div>
+    
+    <!-- </div> -->
+    <div class="row vat">
+      <div class="col">
+        <h3>Total<span>*Incl. VAT </span></h3>
+      </div>
+      <div class="col text-right">
+        <h3>${{cartValue + deliveryCharges | number : 2}}</h3>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar-balanced"  ng-click="orderNow()">
+  <h1 class="title">Order Now</h1>
+</ion-footer-bar>
+</ion-view>

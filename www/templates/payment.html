@@ -1,0 +1,57 @@
+<ion-view view-title="payment">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-android-cart white" ng-click="goCart()">
+    </button>
+    <spam class="cart-icon-header" ng-if="cartValue > 0" ng-click="goCart()">$ {{cartValue | number : 2}}</spam>
+  </ion-nav-buttons>
+
+  <ion-content scroll="true" class="payment">
+  <form role="form" id="payment-form" stripe-form="handleStripe" name="myForm">
+  <div class="pay-header"> 
+    <h4>${{cartValue + deliveryCharges | number : 2}}</h4>
+    <p class="text-center">Payment Details</p> 
+  </div> 
+ 
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="CARD HOLDER NAME" class="form-control" ng-model="name" required/>
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="CARD NUMBER" class="form-control" ng-model="number" payments-validate="card" payments-format="card" payments-type-model="type" ng-class="myForm.number.$card.type" required/>
+    </label>
+    <label class="item item-input">
+      <input ng-model="expiry" payments-validate="expiry" payments-format="expiry" type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+    </label>
+    <label class="item item-input">
+      <input ng-model="cvc" payments-validate="cvc" payments-format="cvc" placeholder="CVC" payments-type-model="type" type="tel" class="form-control" name="cardCVC" autocomplete="cc-csc" required/>
+    </label>
+    <label class="item item-input">
+       <h2><b>Amount: <span>${{cartValue + deliveryCharges | number : 2}}</span></b></h2>
+    </label>
+  </div> 
+
+        <div class="row">
+            <div class="error_msg" ng-if="error">{{errorMessage}}</div>
+
+            <div class="col-xs-12 bar-balanced" style="margin-top: 50px;">
+                <div class="success_msg" style="margin-bottom:15px;" ng-if="showverifypasssuccessmsg">{{verifypasssuccessmsg}}</div>
+            </div>
+        </div>
+        <div class="row" style="display:none;">
+            <div class="col-xs-12">
+                <p class="payment-errors"></p>
+            </div>
+        </div>
+  <div align-title="center" class="bar-footer bar-energized">
+      <button class="button" type="submit">Pay Now</button>   
+  </div>   
+  </ion-content>
+<!-- <ion-footer-bar align-title="center" class="bar-balanced">
+  <button class="button" type="submit">Pay Now</button> 
+  <input class="subscribe btn btn-primary btn-lg btn-block" type="submit" value="PAY NOW">
+</ion-footer-bar> -->
+
+</form> 
+</ion-view>
+
+

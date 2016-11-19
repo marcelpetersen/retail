@@ -1,0 +1,12 @@
+<ion-view view-title="Favorites" ng-init="Favorites()">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-avatar" ng-repeat="item in Items" type="item-text-wrap">
+          <img ng-if="item.item_imagename" ng-src="{{imageURL}}/web/{{business_id.business_id}}/{{item.item_imagename}}">
+          <h2>{{item.item_name}}</h2>
+          <h2 ng-bind-html="item.item_description"></h2>
+          <small>{{item.item_price | currency:'S$ '}}</small>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

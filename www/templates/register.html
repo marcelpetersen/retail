@@ -1,0 +1,67 @@
+<ion-view view-title="Register">
+  <ion-content class="login">
+    <div class="row login-text text-center">
+      <div class="col">
+        <!-- <button class="button button-clear" ng-click="myBack()" style="float: left;">
+          <i class="icon ion-ios-arrow-back" style="color: white;"></i>
+        </button> -->
+        <h3 style="margin-top: 0px;margin-right: 10vw;">Register</h3><br><br>
+      </div>
+    </div>
+    <form name="register" ng-submit="register.$valid && doRegister()" novalidate>
+      <div ng-if="err" class="energized error-msg" role="alert">
+        <div>{{err}}</div>
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" name="firstName" ng-model="firstName" placeholder="First Name" required>
+        </label>
+        <div ng-messages="register.$submitted && register.firstName.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter your first name.</div>
+        </div>
+        <label class="item item-input">
+          <input type="text" name="lastName" ng-model="lastName" placeholder="Last Name" required>
+        </label>
+        <div ng-messages="register.$submitted && register.lastName.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter your last name.</div>
+        </div>
+        <label class="item item-input">
+          <input type="email" name="email" ng-model="email" placeholder="Email" ng-pattern='/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i' required>
+        </label>
+        <div ng-messages="register.$submitted && register.email.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter your email address.</div>
+          <div ng-message="email">Please enter valid email.</div>
+          <div ng-message="pattern">Please enter valid email.</div>
+        </div>
+        <label class="item item-input">
+          <input type="text" name="address" ng-model="address" placeholder="Address" required>
+        </label>
+        <div ng-messages="register.$submitted && register.address.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter your address</div>
+        </div>
+        <label class="item item-input">
+          <input type="tel" name="mobile" ng-model="mobile" placeholder="Mobile" required>
+        </label>
+        <div ng-messages="register.$submitted && register.mobile.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter your mobile number.</div>
+        </div>
+        <label class="item item-input">
+          <input type="password" name="password" ng-model="password" placeholder="Password" required>
+        </label>
+        <div ng-messages="register.$submitted && register.password.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter password.</div>
+        </div>
+      </div>
+      <div ng-show="showalreadyregister" Class="energized error-msg" role="alert">{{alreadyregister}}</div>
+      <br><br>
+      
+
+      <div class="list">
+        <label class="item" style="border:none;">
+          <button class="button button-block login-btn register" type="submit">Register NOW</button>
+        </label>
+      </div>
+       
+    </form>
+  </ion-content>
+</ion-view>

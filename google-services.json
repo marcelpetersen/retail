@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "604191734281",
+    "project_id": "levoeu-149215"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604191734281:android:e8c1632b80be8d61",
+        "android_client_info": {
+          "package_name": "com.creatmobileshop.levoeu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604191734281-88la1tlqgjto8iilmod5d4cttdo5461q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creatmobileshop.levoeu",
+            "certificate_hash": "D81A0A74EFD5D3961D4D8743B68CD6FB31906E4A"
+          }
+        },
+        {
+          "client_id": "604191734281-gojukuru6mgqbmus3pq71f2dsmhj64pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOAFOR2vhcuju0EHAR1MHLVqj4dOpJNIg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

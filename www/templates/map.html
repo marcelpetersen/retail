@@ -1,0 +1,28 @@
+<ion-view view-title="flowershop">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon ion-chevron-right forward-map white" ng-click="goProducts()" style="margin: 0px;">
+    </button>
+    <!-- <i class="icon ion-chevron-right forward-map" ng-click="goProducts()" style="padding-right: 5px;"></i> -->
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+    <div class="map-input-heading">
+      DELIVERY ADDRESS
+    </div>
+    <div class="map-label">
+      <label class="item item-input">
+        <i class="icon ion-android-search placeholder-icon" style="font-size: 25px;color: #000;"></i>
+        <input type="text" ng-model="address" id="pac-input" data-tap-disabled="true" ng-change="disableTap()" placeholder="Tell us where you are..." autocorrect="off" autocapitalize="off">
+      </label>
+    </div>
+    <div class="map-input-heading">
+      APARTMENT / FLOOR / ACCESS CODE
+    </div>
+    <div class="map-label">
+      <label class="item item-input">
+        <input type="text" ng-model="building" data-tap-disabled="true" placeholder="Optional" autocorrect="off" autocapitalize="off">
+      </label>
+    </div>
+    <div id="map" data-tap-disabled="true" style="height: 70vh"></div>
+    <button class="map-button" ng-click="goProducts()">SET LOCATION</button>
+  </ion-content>
+</ion-view>

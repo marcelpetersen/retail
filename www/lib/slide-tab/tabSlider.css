@@ -1,0 +1,95 @@
+.tabbed-slidebox .slider {
+  height: 100%;
+}
+.tabbed-slidebox.btm .slider {
+  margin-bottom: -50px;
+}
+.tabbed-slidebox .slider-slides {
+  width: 100%;
+}
+.tabbed-slidebox .slider-slide {
+  padding-top: 0px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  font-weight: 300;
+  /*background-color: #0398dc;*/
+}
+.tabbed-slidebox .tsb-icons {
+  height: 40px;
+  z-index: 10;
+  /*box-shadow: 0px 0px 5px 0px #999999;*/
+  text-shadow: none;
+  line-height: 18px;
+  font-size: 10.0pt;
+}
+.tabbed-slidebox .tsb-ic-wrp {
+  display: flex;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s;
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transform: translate3d(0, 0, 0);
+    background-image: radial-gradient(circle farthest-corner at 0 0 , #f7f7f7, #f3f3f3 50%, #f7f7f7);
+    height: 40px;
+}
+.tabbed-slidebox .tsb-icons a {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+    color: #303030 !important;
+    font-size: 12px !important;
+  text-transform: uppercase;
+  -webkit-transition: color .25s ease-in-out;
+  transition: color .25s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 8px, 0);
+}
+.tabbed-slidebox .tsb-icons a.active {
+    color: #191919 !important;
+    font-size: 14px !important;
+  box-shadow: 0px 5px 0px 0px #d2d2d2;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.tabbed-slidebox .tabbed-slidebox {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.tabbed-slidebox .tsb-icons:after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 1.4em 1.4em 1.4em;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -12px;
+  left: 50%;
+  margin-left: -14px;
+}
+.tsb-hscroll.scroll-view {
+  white-space: nowrap;
+  margin: 10px auto;
+}
+.tsb-hscroll.scroll-view .scroll-bar {
+  visibility: hidden;
+}
+.tsb-hscroll.scroll-view .scroll.onscroll {
+  -webkit-transition: -webkit-transform 0.3s;
+  /* For Safari 3.1 to 6.0 */
+}
+.tabbed-slidebox .tsb-icons .scroll a {
+  width: auto;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-decoration: none;
+  margin: 0 10px;
+  border-bottom: 3px solid transparent;
+}
+.tabbed-slidebox .tsb-icons .scroll a.active {
+  font-size: 1.8em;
+  /*border-bottom: 3px solid #ccc;*/
+}

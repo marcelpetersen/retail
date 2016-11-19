@@ -1,0 +1,69 @@
+<ion-view view-title="Edit Address">
+  
+  <ion-content scroll="true" class="payment">
+  <form role="form" name="EditAddressForm"  ng-submit="updateaddress(EditAddressForm)" novalidate>
+  <div class="pay-header"> 
+    <p class="text-center" style="font-size: 18px;line-height: 29px;">Default Address Details</p> 
+  </div> 
+ 
+<div class="list">
+    <label class="item item-input">
+      <input type="text" name="firstname" placeholder="FIRST NAME" class="form-control" ng-model="usersession.firstName" required/>
+    </label>
+    <div ng-messages="EditAddressForm.$submitted && EditAddressForm.firstname.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.firstname.$error">
+          <div ng-message="required">Please enter your first name</div>
+    </div>
+    <label class="item item-input">
+      <input type="text" name="lastname" placeholder="LAST NAME" class="form-control" ng-model="usersession.lastName" required/>
+    </label>
+    <div ng-messages="EditAddressForm.$submitted && EditAddressForm.lastname.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.lastname.$error">
+          <div ng-message="required">Please enter your last name</div>
+    </div>
+    <label class="item item-input">
+      <textarea type="text" name="address1" placeholder="DEFAULT ADDRESS" class="form-control" ng-model="usersession.address" required></textarea>
+    </label>
+     <div ng-messages="EditAddressForm.$submitted && EditAddressForm.address1.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.address1.$error">
+          <div ng-message="required">Please enter your default address</div>
+    </div>
+    <label class="item item-input">
+      <textarea type="text" placeholder="ADDRESS2" class="form-control" ng-model="usersession.address2"></textarea>
+    </label>
+    <label class="item item-input">
+      <input type="text" name="country" placeholder="COUNTRY" class="form-control" ng-model="usersession.country" required/>
+    </label>
+     <div ng-messages="EditAddressForm.$submitted && EditAddressForm.country.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.country.$error">
+          <div ng-message="required">Please enter your country</div>
+    </div>
+     <label class="item item-input">
+      <input type="text" name="state" placeholder="STATE" class="form-control" ng-model="usersession.state" required/>
+    </label>
+    <div ng-messages="EditAddressForm.$submitted && EditAddressForm.state.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.state.$error">
+          <div ng-message="required">Please enter your state</div>
+    </div>
+    <label class="item item-input">
+      <input type="text" name="city" placeholder="CITY" ng-model="usersession.city"  class="form-control" required />
+      <input type="number" name="postal_code" placeholder="POSTAL CODE" ng-model="usersession.postalcode"  class="form-control" required />
+    </label>
+    <div ng-messages="EditAddressForm.$submitted && EditAddressForm.city.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.city.$error">
+          <div ng-message="required">Please enter your city</div>
+    </div>
+     <div ng-messages="EditAddressForm.$submitted && EditAddressForm.postal_code.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.postal_code.$error" class="energized error-msg">
+          <div ng-message="required">Please enter your postal code</div>
+    </div>
+    
+    <label class="item item-input">
+      <input type="text" name="mobileno" placeholder="MOBILE NUMBER" class="form-control" ng-model="usersession.mobile" required/>
+    </label>
+    <div ng-messages="EditAddressForm.$submitted && EditAddressForm.mobileno.$error" class="energized error-msg" role="alert" ng-if="EditAddressForm.$submitted && EditAddressForm.mobileno.$error">
+          <div ng-message="required">Please enter your mobile number</div>
+    </div>
+
+  </div> 
+  <div align-title="center" class="bar-footer bar-energized">
+      <button class="button" type="submit">Update</button>   
+  </div>   
+  </ion-content>
+</form> 
+</ion-view>
+
+

@@ -1,0 +1,28 @@
+<ion-view view-title="">
+ <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-android-cart white" ng-click="goCart()">
+    </button>
+    <spam class="cart-icon-header" ng-if="cartValue > 0" ng-click="goCart()">$ {{cartValue | number : 2}}</spam>
+  </ion-nav-buttons>
+ <ion-content class="detail"> 
+ <div class="row text-center">
+	 <div class="col">
+	 	<img ng-src="{{imageURL}}web/{{productdetails.business_id}}/{{productdetails.item_imagename}}" class="detail_img">
+	 </div>
+ </div>
+ <div class="row">
+ 	<div class="col">
+ 		<h4 class="product-price first">{{productdetails.item_name}}<br></h4><span style="font-size: 18px;
+    color: #f2ca72;">${{productdetails.item_price}}</span>
+ 	</div>
+ </div>
+<div class="row">
+ 	<div class="col">
+			<p ng-bind-html="productdetails.item_description"></p>
+ 	</div>
+ </div>
+ </ion-content>
+ <ion-footer-bar align-title="center" class="bar-balanced">
+  <h1 class="title" ng-click="addToCart(productdetails)">Add to cart</h1>
+</ion-footer-bar>
+</ion-view>

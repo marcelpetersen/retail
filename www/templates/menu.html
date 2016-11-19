@@ -1,0 +1,65 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="white">
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon white" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" cache-view = "false"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable side-menu-header">
+      <div class="row" ng-if="!usersession" ng-click="login()">
+        <img src="img/user.png" class="user">
+        <h1>Sign In</h1>
+      </div>
+      <div ng-if="usersession">
+         <span> <div class="btnedit"> <input type="file" file-model="myFile" id="profilelogo" onchange="angular.element(this).scope().uploadprofilelogo()"></div>
+          <div class="editicon"> <i class="icon ion-edit"></i> </div> </span>
+        <img src="img/user.png" class="user" id="proflogo" ng-if="usersession.profile_image_url" ng-src="{{usersession.profile_image_url}}">
+        <img src="img/user.png" class="user" id="proflogo" ng-if="!usersession.profile_image_url">
+        <h1>{{usersession.firstName}}</h1>
+      </div>
+    </ion-header-bar>
+    <ion-content class="side-menu-content">
+      <ion-list>
+       <!-- <ion-item menu-close ng-click="goCategory()">
+          <i class="icon ion-ios-paper"></i><span>Categories</span>
+        </ion-item> -->
+
+        <ion-item menu-close ng-click="goItem()">
+         <img src="img/dress.svg" style="height: 26px;color: #f2cd7a;float: left; width: 32px; margin-top: 7px;margin-right: 8px;
+    margin-left: -6px;"><span>Items</span>
+        </ion-item>
+
+         <ion-item menu-close>
+          <i class="icon ion-help-buoy"></i><span>History</span>
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-card"></i><span>Card Details</span>
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-android-notifications"></i><span>Notifications</span>
+        </ion-item>
+
+         <ion-item menu-clos ng-click="gotosetting()" ng-if="usersession">
+          <i class="icon ion-ios-gear"></i><span>Settings</span>
+        </ion-item>
+        
+        <ion-item menu-close ng-click="gotoaboutus()">
+          <i class="icon ion-ios-people"></i><span>About Us</span>
+        </ion-item>
+        
+        <ion-item menu-close ng-click="logout()" ng-if="usersession.firstName" >
+          <i class="icon ion-power"></i><span>Log Out</span>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,16 @@
+<ion-view view-title="My Address">
+ <ion-content>
+<div class="list">
+  <a class="item">
+  	<span class="float-right" style="float: right;" ng-click="gotoeditaddress()">Edit</span>
+    <p><h2 class="capitalize" style="font-weight: bold;padding-bottom: 10px;">{{usersession.firstName}} {{usersession.lastName}}</h2></p>
+    <p style="font-size: 15px;color: #7d7b7b;font-weight: 500;font-family: sans-serif;">{{usersession.mobile}}</p>
+  	<p style="font-size: 15px;color: #7d7b7b;font-weight: 500;font-family: sans-serif;">{{usersession.address}}</p>
+  </a>
+  <a class="item">
+    <span class="float-right" style="float: right;font-size: 29px;color: #7a7a7a;">+</span>
+    <p><h2>Add new address</h2></p>
+  </a>
+</div>
+  </ion-content>
+</ion-view>

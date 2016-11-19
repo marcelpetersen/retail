@@ -1,0 +1,56 @@
+<ion-view title='<img class="title-image" src="img/logo_levoeu.png" style="margin-top: 10px;height:25px;" />'>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-android-cart white" ng-click="goCart()">
+    </button>
+    <spam class="cart-icon-header" ng-if="cartValue > 0" ng-click="goCart()">$ {{cartValue | number : 2}}</spam>
+  </ion-nav-buttons>
+  <ion-content scroll="false" style="padding-bottom: 48px;">
+    <tab-slide-box tab="0">
+      <div class="tsb-icons">
+        <div class="tsb-ic-wrp">
+          <ion-scroll direction="x" class="tsb-hscroll main-menu">
+            <a ng-repeat="cat in Category" href="javascript:;" ng-click="filterByCategory(cat.category_id)" class=""><b>{{cat.category_name}}</b></a>
+          </ion-scroll>
+        </div>
+      </div>
+      <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+          <ion-scroll style="height:100%" delegate-handle="slide1Scroll">
+            <div class="slide-box-content">
+              <div class="product height-50" ng-repeat="item in items | filter: {category_id:category}">
+                <h4 class="product-price first">${{item.item_price}}<span class="product-quantity first"><br>{{item.item_name}}</span></h4>
+                <div class="img-wrapper" ui-sref="app.detail({data:item})">
+                <img ng-src="{{imageURL}}web/{{business_id.business_id}}/{{item.item_imagename}}">
+                </div>
+                <div>
+                  <i class="icon ion-minus" ng-click="removeFromCart(item)"></i>
+                  <span>{{item.quantity || 0}}</span>
+                  <i class="icon ion-plus" ng-click="addToCart(item )"></i>
+                </div>
+              </div>
+            </div>
+          </ion-scroll>
+        </ion-slide>
+        <ion-slide>
+          <ion-scroll style="height:100%" delegate-handle="slide1Scroll">
+            <div class="slide-box-content">
+              <div class="product height-50" ng-repeat="item in items | filter: {category_id:category}">
+                <h4 class="product-price first">${{item.item_price}}<span class="product-quantity first"><br>{{item.item_name}}</span></h4>
+                <div class="img-wrapper" ui-sref="app.detail({data:item})">
+                <img ng-src="{{imageURL}}web/{{business_id.business_id}}/{{item.item_imagename}}">
+                </div>
+                <div>
+                  <i class="icon ion-minus" ng-click="removeFromCart(item)"></i>
+                  <span>{{beer.quantity || 0}}</span>
+                  <i class="icon ion-plus" ng-click="addToCart(item )"></i>
+                </div>
+              </div>
+            </div>
+          </ion-scroll>
+        </ion-slide>
+      </ion-slide-box>
+    </tab-slide-box>
+    <button class="button button-icon button-clear ion-arrow-left-c white fixed-cart" ng-click="gotobusiness()">
+    </button>
+  </ion-content>
+</ion-view>

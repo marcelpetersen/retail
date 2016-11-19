@@ -1,0 +1,80 @@
+<ion-view view-title="shipping">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-android-cart white" ng-click="goCart()">
+    </button>
+    <spam class="cart-icon-header" ng-if="cartValue > 0" ng-click="goCart()">$ {{cartValue + deliveryCharges | number : 2}}</spam>
+  </ion-nav-buttons>
+  <ion-content scroll="true" class="payment">
+  <form role="form" name="ShippingForm" ng-submit="saveShippingdetails(ShippingForm)" novalidate>
+  <div class="pay-header"> 
+   <!--  <h4>${{cartValue + deliveryCharges | number : 2}}</h4> -->
+    <p class="text-center" style="    font-size: 18px;
+    line-height: 29px;">Shipping Address Details</p> 
+  </div> 
+ 
+<div class="list">
+    <label class="item item-input">
+      <input type="text" name="name" placeholder="NAME" class="form-control" ng-model="shipping.name" required/>
+    </label>
+    <div ng-messages="ShippingForm.$submitted && ShippingForm.name.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.name.$error">
+          <div ng-message="required">Please enter your name</div>
+    </div>
+    <label class="item item-input">
+      <textarea type="text" name="address1" placeholder="SHIPPING ADDRESS" class="form-control" ng-model="shipping.shipping_address" required></textarea>
+    </label>
+     <div ng-messages="ShippingForm.$submitted && ShippingForm.address1.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.address1.$error">
+          <div ng-message="required">Please enter your address details</div>
+    </div>
+    <label class="item item-input">
+      <textarea type="text" placeholder="SHIPPING ADDRESS2" class="form-control" ng-model="shipping.shipping_address2" ></textarea>
+    </label>
+    <label class="item item-input">
+      <input type="text" name="country" placeholder="COUNTRY" class="form-control" ng-model="shipping.country" required/>
+    </label>
+    <div ng-messages="ShippingForm.$submitted && ShippingForm.country.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.name.$error">
+          <div ng-message="required">Please enter your country name</div>
+    </div>
+     <label class="item item-input">
+      <input type="text" name="state" placeholder="STATE" class="form-control" ng-model="shipping.state" required/>
+    </label>
+    <div ng-messages="ShippingForm.$submitted && ShippingForm.state.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.name.$error">
+          <div ng-message="required">Please enter your state name</div>
+    </div>
+    <label class="item item-input">
+      <input type="text" name="city" placeholder="CITY" ng-model="shipping.city"  class="form-control" required />
+      <input type="number" name="postal_code" placeholder="POSTAL CODE" ng-model="shipping.postal_code"  class="form-control" required />
+    </label>
+     <div ng-messages="ShippingForm.$submitted && ShippingForm.postal_code.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.postal_code.$error" class="energized error-msg">
+          <div ng-message="required">Please enter your postal code</div>
+    </div>
+    <div ng-messages="ShippingForm.$submitted && ShippingForm.city.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.city.$error">
+          <div ng-message="required">Please enter your city</div>
+    </div>
+    <label class="item item-input">
+      <input type="text" name="phoneno" placeholder="PHONE NUMBER" class="form-control" ng-model="shipping.phone_no" />
+    </label>
+    <div ng-messages="ShippingForm.$submitted && ShippingForm.phoneno.$error" class="energized error-msg" role="alert" ng-if="ShippingForm.$submitted && ShippingForm.name.$error">
+          <div ng-message="required">Please enter your phone number</div>
+    </div>
+
+  </div> 
+
+        <div class="row">
+            <div class="error_msg" ng-if="error">{{errorMessage}}</div>
+            <div class="successmsg" ng-show="showshipsuccMsg">{{shipsuccMsg}}</div>
+            <div class="errmsg" ng-show="showshipErrMsg">{{shipErrMsg}}</div>
+            
+        </div>
+        <div class="row" style="display:none;">
+            <div class="col-xs-12">
+                <p class="payment-errors"></p>
+            </div>
+        </div>
+  <div align-title="center" class="bar-footer bar-energized">
+      <button class="button" type="submit">Submit</button>   
+  </div>   
+  </ion-content>
+</form> 
+</ion-view>
+
+

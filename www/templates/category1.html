@@ -1,0 +1,14 @@
+<ion-view view-title="Categories" ng-init="categories()">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-android-cart white" ng-click="goCart()">
+    </button>
+    <spam class="cart-icon-header" ng-if="cartValue > 0" ng-click="goCart()">R{{cartValue | number : 2}}</spam>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list" ng-repeat="category in Categories">
+      <div class="item item-divider" ui-sref="app.categorydescription({categorydata:category})">
+      {{category.category_name}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

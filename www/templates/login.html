@@ -1,0 +1,79 @@
+<ion-view view-title="Login">
+  <ion-content class="login">
+    <!-- <ion-nav-bar>
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar> -->
+  <div class="row login-text text-center">
+  <div class="col">
+    <button class="button button-clear" ng-click="myBack()" style="float: left;">
+      <i class="icon ion-ios-arrow-back" style="color: white;"></i>
+    </button>
+    <img src="img/logo_levoeu.png" style="align-content: center;margin-left: -50px;margin-top: 22px;padding-bottom: 5px;
+    padding-top: 28px;">
+   <h3 style="margin-top: 0px;margin-right: 10vw;"></h3><br><br>
+    <p>Login or Create New Account</p>
+  </div>
+  </div>
+    <form name="login" ng-submit="login.$valid && doLogin()" novalidate>
+      <div ng-if="err" class="energized error-msg" role="alert">
+        <div>{{err}}</div>
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <!-- <span class="input-label">Email</span> -->
+          <input type="email" name="email" ng-model="email" placeholder="Email" ng-pattern='/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i' required>
+        </label>
+        <div ng-messages="login.$submitted && login.email.$error" class="energized error-msg" role="alert">
+          <div ng-message="required">Please enter your email address.</div>
+          <div ng-message="email">Please enter valid email.</div>
+          <div ng-message="pattern">Please enter valid email.</div>
+        </div>
+        <label class="item item-input">
+          <!-- <span class="input-label">Password</span> -->
+          <input type="password" name="password" placeholder="Password" ng-model="password" required>
+        </label>
+        <div ng-messages="login.$submitted && login.password.$error" class="energized error-msg" role="alert" >
+          <div ng-message="required">Please enter password.</div>
+        </div>
+        <span ng-click="goForgotPassword()">Forgot Password?</span><br><br>
+
+        <label class="item" style="border:none;">
+          <button class="button button-block login-btn" type="submit">Log in</button>
+        </label>
+        <div class="energized error-msg" role="alert" ng-if="showloginerrmsg">{{loginerrmsg}}</div>
+      </div>
+      <div class="list">
+        <div class="row">
+          <div class="col">
+            <hr>
+          </div>
+          <div class="col-40">
+            <span>or sign in with </span>
+          </div>
+          <div class="col">
+          <hr>
+          </div>
+        </div>
+         <div class="row social">
+          <div class="col">
+          </div>
+          <div class="col-30">
+            <img src="img/google-plus (1).svg" ng-click="googleRegistration()">
+            <img src="img/facebook.svg">
+            <img src="img/twitter.svg">
+            <img src="img/instagram (2).svg">
+          </div>
+          <div class="col">
+          </div>
+        </div> 
+      </div>
+      <div class="list">
+        <span>Don't have an account?</span><br><br>
+        <label class="item" style="border:none;">
+          <button type="button" ng-click="goRegister()" class="button button-block login-btn register" type="submit">Register NOW</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
